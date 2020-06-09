@@ -28,8 +28,7 @@ jobs:
     #   run: npm install
 
     - name: Code Coverage
-      uses: romeovs/lcov-reporter-action@v0.2.16
-      with:
+      uses: mattallty/jest-github-action@v1
+      env:
         # Github token
-        github-token: ${{ secrets.JEST_COVERAGE_KEY }}
-        lcov-file: ./coverage/lcov.info
+        GITHUB_TOKEN: ${{ secrets.JEST_COVERAGE_KEY }}
