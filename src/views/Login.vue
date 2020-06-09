@@ -35,7 +35,7 @@
               <v-spacer />
               username: test
               <v-spacer />
-              password: 123456789
+              password: 123456
             </v-alert>
             <v-form ref="login" v-model="valid">
               <Input
