@@ -1,4 +1,4 @@
-name: Test Lighthouse Check with Minimum Score Enforcement
+name: Lighthouse-Check-with-Minimum-Score-Enforcement
 on: [push]
 
 jobs:
@@ -18,7 +18,7 @@ jobs:
         with:
           lighthouseCheckResults: ${{ steps.lighthouseCheck.outputs.lighthouseCheckResults }}
           minAccessibilityScore: "80"
-          minBestPracticesScore: "50"
-          minPerformanceScore: "50"
-          minProgressiveWebAppScore: "50"
-          minSeoScore: "50"
+          minBestPracticesScore: "86"
+          minPerformanceScore: "13"
+          minProgressiveWebAppScore: "48"
+          minSeoScore: "83"
