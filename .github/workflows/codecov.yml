@@ -11,7 +11,7 @@ jobs:
         run: npm install
 
       - name: Test
-        run: npx jest
+        run: npx jest --coverage
 
       - name: Monitor coverage
         uses: slavcodev/coverage-monitor-action@1.1.0
