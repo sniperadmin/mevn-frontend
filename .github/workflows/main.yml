@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: CI Actions
 
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
@@ -27,4 +27,4 @@ jobs:
       with:
         # Github token
         github-token: ${{ secrets.JEST_COVERAGE_KEY }}
-        test-command: "jest --coverage"
+        test-command: "npm run test:unit"
