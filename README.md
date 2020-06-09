@@ -1,6 +1,7 @@
 # client
 ![CI-Jest](https://github.com/sniperadmin/mevn-frontend/workflows/CI-Jest/badge.svg)
 ![Coverage-Monitor](https://github.com/sniperadmin/mevn-frontend/workflows/Coverage-Monitor/badge.svg)
+![Lighthouse-Check-with-Minimum-Score-Enforcement](https://github.com/sniperadmin/mevn-frontend/workflows/Lighthouse-Check-with-Minimum-Score-Enforcement/badge.svg)
 
 ## Project setup
 ```
