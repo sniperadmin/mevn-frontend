@@ -15,8 +15,8 @@
         cols="6"
       >
         <Card
-          :loading="progress && !error"
-          :disabled="progress && !error"
+          :loading="progress"
+          :disabled="progress"
           raised
         >
           <template v-slot:custom-title>
@@ -71,7 +71,7 @@
             <v-btn
               @click.enter="loginUser"
               @keyup.enter="loginUser"
-              :disabled="!valid || progress"
+              :disabled="!valid"
               color="primary"
               class="mb-3"
             >
@@ -144,6 +144,7 @@ export default {
             }
           })
           .catch((err) => {
+            this.progress = false
             this.componentError = err
           })
       } else {
