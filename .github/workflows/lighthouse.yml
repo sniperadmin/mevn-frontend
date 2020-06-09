@@ -12,7 +12,7 @@ jobs:
         id: lighthouseCheck
         with:
           apiToken: {{ secrets.LIGHTHOUSE_CHECK_TOKEN }}
-          urls: 'https://mevn-authenticate.herokuapp.com/'
+          urls: '74a17117-9cae-4f67-938e-26030021fb86'
           # ... all your other inputs
       - name: Handle Lighthouse Check results
         uses: foo-software/lighthouse-check-status-action@master
