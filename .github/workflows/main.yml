@@ -24,13 +24,12 @@ jobs:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
 
-    - name: Install Dependencies
-      run: npm install
+    # - name: Install Dependencies
+    #   run: npm install
 
-    - name: Jest Code Coverage Report
-      uses: ziishaned/jest-reporter-action@v0.0.1
+    - name: Code Coverage
+      uses: romeovs/lcov-reporter-action@v0.2.16
       with:
         # Github token
         github-token: ${{ secrets.JEST_COVERAGE_KEY }}
-        test-command: |
-          jest --coverage
+        lcov-file: ./coverage/lcov.info
