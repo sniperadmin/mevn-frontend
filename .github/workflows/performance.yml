@@ -8,9 +8,12 @@ jobs:
       - name: Generate Lighthouse Report
         uses: justinribeiro/lighthouse-action@master
         with:
+        with:
           secret: ${{ secrets.GITHUB_TOKEN }}
-          url: https://${{ github.sha }}-dot-${{ secrets.GAE_PID }}.appspot.com
-          wptConnectionSpeed: threegfast
+          url: https://justinribeiro.com/
+          lighthouseBudget: .github/test/budget.json
+          lighthouseScoringBudget: .github/test/scores.js
+          # lighthouseConfiguration: .github/test/custom-config.js
       - name: Saving Lighthouse Audit Artifacts
         uses: actions/upload-artifact@master
         with:
