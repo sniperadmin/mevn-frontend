@@ -17,6 +17,9 @@ describe('Login', () => {
       vuetify,
       mocks: {
         $store: {
+          getters: {
+            error: null
+          },
           actions: {
             login: jest.fn()
           }
