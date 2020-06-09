@@ -28,7 +28,7 @@ jobs:
     #   run: npm install
 
     - name: Code Coverage
-      uses: mattallty/jest-github-action@v1
+      uses: ziishaned/jest-reporter-action@v0.0.1
       env:
         # Github token
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
