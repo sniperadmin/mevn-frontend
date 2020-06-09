@@ -1,5 +1,7 @@
 # client
 ![CI-Jest](https://github.com/sniperadmin/mevn-frontend/workflows/CI-Jest/badge.svg)
+![CI-Coverage](https://github.com/sniperadmin/mevn-frontend/workflows/CI-Coverage/badge.svg)
+
 ## Project setup
 ```
 npm install
