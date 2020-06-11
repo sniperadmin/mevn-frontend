@@ -8,10 +8,9 @@ jobs:
       - uses: actions/checkout@master
       - run: |
           npm install
-          npm i serve-dist
-          npm run build
-          serve -s dist
-      - name: Run Lighthouse
+          npm run serve
+
+        - name: Run Lighthouse
         uses: foo-software/lighthouse-check-action@master
         id: lighthouseCheck
         with:
