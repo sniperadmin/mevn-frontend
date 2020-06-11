@@ -6,24 +6,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
-      # - run: |
-      #     npm install
-      #     npm run build
+      - run: |
+          npm install
+          npm run build
 
-        #runs the lighthouse
-      - name: Lighthouse CI Action
-        uses: treosh/lighthouse-ci-action@v2
-        with:
-          urls: |
-            localhost:8080/
-          budgetPath: '.github/lighthouse/budget.json' # test performance budgets
-          configPath: '.github/lighthouse/lighthouserc.json'
-          # Path to a LHCI lighthouserc.json file
-          # Opt-out of saving Lighthouse results as an action artifacts
-          uploadArtifacts: false
-          # Number of runs to do per URL
-          serverBaseUrl: ${{ secrets.LHCI_SERVER_URL }}
-          serverToken: ${{ secrets.LHCI_SERVER_TOKEN }}
+      # lighthouse localhost test
+      - name: Lighthouse CI
+        run: |
+          npm install -g @lhci/cli@0.3.x
+          lhci autorun --config=.github/lighthouse/lighthouserc.json
+        env:
+          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
+
+
 
       # lighthouse deployed version
       - name: Run Lighthouse
