@@ -10,7 +10,7 @@ jobs:
           npm install
           npm run serve
 
-        - name: Run Lighthouse
+      - name: Run Lighthouse
         uses: foo-software/lighthouse-check-action@master
         id: lighthouseCheck
         with:
