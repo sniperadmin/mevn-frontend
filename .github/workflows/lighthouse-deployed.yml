@@ -6,17 +6,6 @@ jobs:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@master
-      - run: |
-          npm install
-          npm run build
-          npm install -g @lhci/cli
-
-      # lighthouse localhost test
-      - name: Test Local Build with Lighthouse CI
-        run: |
-          lhci autorun --config=.github/lighthouse/lighthouserc.json
-        env:
-          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
 
       # lighthouse deployed version
       - name: Test Deployed Version

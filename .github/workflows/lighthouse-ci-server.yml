@@ -1,0 +1,19 @@
+name: Lighthouse-Server-Check
+on: [push]
+
+jobs:
+  lighthouse-check:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@master
+      - run: |
+          npm install
+          npm run build
+
+      # lighthouse localhost test
+      - name: Test Local Build with Lighthouse CI
+        run: |
+          npm install -g @lhci/cli
+          lhci autorun --config=.github/lighthouse/lighthouserc.json
+        env:
+          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
