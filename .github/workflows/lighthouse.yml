@@ -3,25 +3,23 @@ on: [push]
 
 jobs:
   lighthouse-check:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
       - uses: actions/checkout@master
       - run: |
           npm install
           npm run build
+          npm install -g @lhci/cli
 
       # lighthouse localhost test
-      - name: Lighthouse CI
+      - name: Test Local Build with Lighthouse CI
         run: |
-          npm install -g @lhci/cli
           lhci autorun --config=.github/lighthouse/lighthouserc.json
         env:
           LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
 
-
-
       # lighthouse deployed version
-      - name: Run Lighthouse
+      - name: Test Deployed Version
         uses: foo-software/lighthouse-check-action@master
         id: lighthouseCheck
         with:
