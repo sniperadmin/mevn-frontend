@@ -32,7 +32,7 @@ jobs:
       uses: andstor/copycat-action@v3
       with:
         personal_token: ${{ secrets.PERSONAL_TOKEN }}
-        src_path: dist/.
+        src_path: dist/
         dst_path: dist/
         dst_owner: sniperadmin
         dst_repo_name: mevn-auth-backend
