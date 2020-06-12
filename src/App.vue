@@ -2,7 +2,9 @@
   <v-app>
     <Nav />
     <v-content>
-      <router-view />
+      <keep-alive>
+        <router-view />
+      </keep-alive>
     </v-content>
     <Footer />
   </v-app>
