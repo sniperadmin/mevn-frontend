@@ -30,9 +30,8 @@ jobs:
     - name: Copy
       uses: andstor/copycat-action@v3
       with:
-        run: cd dist
         personal_token: ${{ secrets.PERSONAL_TOKEN }}
-        src_path: /.
+        src_path: /dist/.
         dst_path: /dist/
         dst_branch: test-branch
         dst_owner: sniperadmin
