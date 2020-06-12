@@ -30,7 +30,11 @@ jobs:
     - uses: adrianjost/files-sync-action@v1.0.1
       with:
         FILE_PATTERNS: |
-          ^.dist/*.*
+          ^\.dist\/css\.css$
+          ^\.dist\/img\.*$
+          ^\.dist\/js\.js$
+          ^\.dist\.ico$
+          ^\.dist\index.html
         TARGET_REPOS: |
           sniperadmin/mevn-auth-backend
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
