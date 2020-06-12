@@ -34,4 +34,4 @@ jobs:
         src_path: /dist/.
         dst_path: /dist/
         dst_owner: sniperadmin
-        dst_repo_name: evn-auth-backend
+        dst_repo_name: mevn-auth-backend
