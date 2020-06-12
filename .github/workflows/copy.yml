@@ -26,8 +26,11 @@ jobs:
       run: |
         npm i
         npm run build
-        cd dist
-        ls
+
+    - name: Checkout dist
+    - uses: Mushus/checkout-submodule@v1
+      with:
+        submodulePath: ./dist
 
     - name: Copy
       uses: andstor/copycat-action@v3
@@ -35,5 +38,6 @@ jobs:
         personal_token: ${{ secrets.PERSONAL_TOKEN }}
         src_path: /.
         dst_path: /dist/
+        dst_branch: test-branch
         dst_owner: sniperadmin
         dst_repo_name: mevn-auth-backend
