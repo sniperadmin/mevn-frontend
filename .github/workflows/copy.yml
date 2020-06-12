@@ -27,14 +27,10 @@ jobs:
         npm i
         npm run build
 
-    - name: Checkout dist
-    - uses: Mushus/checkout-submodule@v1
-      with:
-        submodulePath: ./dist
-
     - name: Copy
       uses: andstor/copycat-action@v3
       with:
+        run: cd dist
         personal_token: ${{ secrets.PERSONAL_TOKEN }}
         src_path: /.
         dst_path: /dist/
