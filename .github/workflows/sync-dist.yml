@@ -33,4 +33,4 @@ jobs:
           ^.dist/*
         TARGET_REPOS: |
           sniperadmin/mevn-auth-backend
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN_FILES }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
