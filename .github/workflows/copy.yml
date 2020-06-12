@@ -27,12 +27,12 @@ jobs:
         npm i
         npm run build
 
-    - name: Copy
-      uses: andstor/copycat-action@v3
+    - name: Pushes to another repository
+      uses: cpina/github-action-push-to-another-repository@master
+      env:
+        API_TOKEN_GITHUB: ${{ secrets.PERSONAL_TOKEN }}
       with:
-        personal_token: ${{ secrets.PERSONAL_TOKEN }}
-        src_path: /dist/.
-        dst_path: /dist/
-        dst_branch: test-branch
-        dst_owner: sniperadmin
-        dst_repo_name: mevn-auth-backend
+        source-directory: 'dist'
+        destination-github-username: 'sniperadmin'
+        destination-repository-name: 'mevn-auth-backend'
+        user-email: nasrbue@gmail.com
